@@ -1,0 +1,38 @@
+.primary{
+  background-color: @primary;
+  color: @font-primary;
+}
+.secondary{
+  background-color: @secondary;
+  color: @font-secondary;
+}
+.warning{
+  background-color: @warning;
+  color: @font-warning;
+}
+.danger{
+  background-color: @danger;
+  color: @font-danger;
+}
+
+.btn {
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+//button hover
+.btn.primary:hover{
+  background-color: lighten(@primary, 25%);
+}
+.btn.secondary:active{
+  background-color: darken(@secondary, 25%);
+}
+.btn.warning:active{
+  background-color: darken(@warning, 25%);
+}
+.btn.danger:active{
+  background-color: darken(@danger, 25%);
+}
+
