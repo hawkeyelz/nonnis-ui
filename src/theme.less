@@ -1,56 +1,95 @@
+// colors
+@color-light: rgb(255, 255, 255);
+@color-dark: rgb(0, 0, 0);
 
-// colors and theme values
-@font-dark: rgb(0, 0, 0);
-@font-light: rgb(255, 255, 255);
-@font-disabled: rgb(150, 150, 150);
-@font-active: rgb(225, 225, 225);
+@disabled-color: rgb(150, 150, 150);
+@disabled-background: rgb(50, 75, 75);
+
+@active-color: rgb(225, 225, 225);
 @active-background: rgb(25, 75, 75);
-@primary: rgb(0, 0, 255);
-@font-primary: rgb(255, 255,255);
-@secondary: rgb(0, 255, 0);
-@font-secondary: rgb(0, 0, 0);
-@warning: rgb(255, 166, 0);
-@font-warning: reb(0,0,0);
-@danger: rgb(255, 0, 0);
-@font-danger: rgb(0,0,0);
-//button borders and color change settings
-@color-change-percentage: 50%;
-@btn-border-size: 2px;
-@btn-border-radius: 2px;
-@btn-border-shadow: 2px 2px 2px rgb(0,0,0);
-@btn-padding: 3px;
-@btn-margin: 2px;
-@btn-primary-border-color: black;
-@btn-secondary-border-color: black;
-@btn-warning-border-color: black;
-@btn-danger-border-color: black;
+
+@primary-background: rgb(0, 0, 255);
+@primary-color: rgb(255, 255, 255);
+@secondary-background: rgb(0, 255, 0);
+@secondary-color: rgb(0, 0, 0);
+@warning-background: rgb(255, 166, 0);
+@warning-color: reb(0, 0, 0);
+@danger-color: rgb(0, 0, 0);
+@danger-background: rgb(255, 0, 0);
+
 // font sizes
 @small: 1rem;
 @medium: 2rem;
 @large: 3rem;
 @xlarge: 4rem;
 @xxlarge: 5rem;
+
 //borders
-//colors
-@border-color-light: rgb(255,255,255);
-@border-color-dark: rgb(0,0,0);
+@border-color-light: rgb(255, 255, 255);
+@border-color-dark: rgb(0, 0, 0);
 @border-color-light-med: rgb(150, 150, 150);
-@border-color-dark-med: rgb(75,75,75);
-//size
-@border-off: none;
+@border-color-dark-med: rgb(75, 75, 75);
 @border-small: 1px;
 @border-med: 3px;
 @border-lg: 5px;
-@border-xlg:7px;
+@border-xlg: 7px;
+
 //radius
 @border-radius-small: 2px;
 @border-radius-med: 4px;
 @border-radius-large: 5px;
 @border-radius-xlg: 7px;
+
 //drop-shadows
 @drop-shadow-small-light: 2px 2px 2px rgb(75, 75, 75);
-@drop-shadow-med-light: 3px 3px 3px rgb(75,75,75);
-@drop-shadow-lg-light: 5px 5px 5px  rgb(75,75,75);
+@drop-shadow-med-light: 3px 3px 3px rgb(75, 75, 75);
+@drop-shadow-lg-light: 5px 5px 5px rgb(75, 75, 75);
 @drop-shadow-small-dark: 2px 2px 2px rgb(25, 25, 25);
-@drop-shadow-med-dark: 3px 3px 3px rgb(25,25,25);
-@drop-shadow-lg-dark: 5px 5px 5px  rgb(25,25,25);
+@drop-shadow-med-dark: 3px 3px 3px rgb(25, 25, 25);
+@drop-shadow-lg-dark: 5px 5px 5px rgb(25, 25, 25);
+
+//buttons
+@button: {
+  height: 1rem;
+  width: 100px;
+  padding: .5rem;
+};
+@button-small: {
+  height: 25;
+  width: 25px;
+};
+@button-med: {
+  height: 50px;
+  width: 50px;
+};
+@button-lg: {
+  height: 75px;
+  width: 75px;
+};
+@button-xl: {
+  height: 100px;
+  width: 100px;
+};
+
+//button hover
+.btn.primary:hover{
+  background-color: lighten(@primary-background, 25%);
+}
+.btn.secondary:active{
+  background-color: darken(@secondary-background, 25%);
+}
+.btn.warning:active{
+  background-color: darken(@warning-background, 25%);
+}
+.btn.danger:active{
+  background-color: darken(@danger-background, 25%);
+}
+
+//card
+@card: {
+  display: block;
+  width: 500px;
+  height: 300px;
+  @border-small();
+  @border-color-dark();
+}

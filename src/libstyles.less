@@ -1,18 +1,17 @@
 .primary{
-  background-color: @primary;
-  color: @font-primary;
+  background-color: @primary-background;
 }
 .secondary{
-  background-color: @secondary;
-  color: @font-secondary;
+  background-color: @secondary-background;
+  color: @secondary-color;
 }
 .warning{
-  background-color: @warning;
-  color: @font-warning;
+  background-color: @warning-background;
+  color: @warning-color;
 }
 .danger{
-  background-color: @danger;
-  color: @font-danger;
+  background-color: @danger-background;
+  color: @danger-color;
 }
 
 .btn {
@@ -22,17 +21,27 @@
   font-weight: bold;
 }
 
-//button hover
-.btn.primary:hover{
-  background-color: lighten(@primary, 25%);
-}
-.btn.secondary:active{
-  background-color: darken(@secondary, 25%);
-}
-.btn.warning:active{
-  background-color: darken(@warning, 25%);
-}
-.btn.danger:active{
-  background-color: darken(@danger, 25%);
+.btn-small {
+  .btn();
+  @button-small();
 }
 
+.btn-med {
+  .btn();
+  @button-med();
+}
+.btn-lg {
+  .btn();
+  @button-lg();
+}
+.btn-xl{
+  .btn();
+  @button-xl();
+}
+
+:root {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
