@@ -1,5 +1,17 @@
 <div class="date-picker-container">
-  <div class="date-picker-grid">
+  <input
+    type="text"
+    class="dateInput"
+    value=""
+    placeholder="MM/DD/YYYY"
+    [(ngModel)]="currentDate"
+  />
+  <button
+    class="dpBtn"
+    alt="open datepicker"
+    (click)="datePickerClick()"
+  ></button>
+  <div class="date-picker-grid" [ngClass]="{ hidden: !togglePicker }">
     <div>Sun</div>
     <div>Mon</div>
     <div>Tues</div>
@@ -7,9 +19,15 @@
     <div>Thurs</div>
     <div>Fri</div>
     <div>Sat</div>
-    <div *ngFor="let date of dates">
-      <span class="day">{{date.date.getDate()}}</span>
+    <div (click)="dateClick(date.date)" class="date" *ngFor="let date of dates"  [ngClass]="{
+      current: date.special.current,
+      holiday: date.special.holiday,
+      important: date.special.important
+    }">
+      <span
+        class="day"
+       >{{ date.date.getDate()}}</span
+      >
     </div>
   </div>
-HERE
 </div>

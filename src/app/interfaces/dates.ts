@@ -1,6 +1,6 @@
+import { specialDate } from "./specialDate";
+
 export interface Day {
   date: Date;
-  currentDay: boolean;
-  holiday: boolean;
-  important: boolean;
+  special: specialDate
 }
