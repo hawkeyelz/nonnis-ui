@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sless"
+          "style": "less"
         },
         "@schematics/angular:application": {
           "strict": true

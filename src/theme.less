@@ -1,6 +1,7 @@
 // colors
 @color-light: rgb(255, 255, 255);
-@color-dark: rgb(0, 0, 0);
+@med: rgb(177, 177, 177);
+@dark: rgb(0, 0, 0);
 
 @disabled: rgb(50, 75, 75);
 @active: rgb(25, 75, 75);
@@ -26,11 +27,29 @@
 @xlarge: 4rem;
 @xxl: 5rem;
 
+//h sizes
+@h: {
+  font-weight: bold;
+  margin: 3rem 0rem 3rem 0rem;
+  padding: 0rem .25rem 0rem .25rem;
+}
+@h1: 2.5rem;
+@h2: 2rem;
+@h3: 1.75rem;
+@h4: 1.5rem;
+@h5: 1.25rem;
+
 //borders
-@border-color-light: rgb(255, 255, 255);
+@border-primary: @primary solid;
+@border-secondary: @secondary solid;
+@border-warning: @warning solid;
+@border-danger: @danger solid;
+@border-info: @info solid;
+
+@border-color-light: rgb(255, 255, 255) solid;
 @border-color-dark: rgb(0, 0, 0);
-@border-color-light-med: rgb(150, 150, 150);
-@border-color-dark-med: rgb(75, 75, 75);
+@border-color-light-med: rgb(150, 150, 150) solid;
+@border-color-dark-med: rgb(75, 75, 75) solid;
 @border-small: 1px;
 @border-med: 3px;
 @border-lg: 5px;
@@ -52,7 +71,6 @@
 
 //buttons
 @button: {
-  height: 3rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   text-align: center;
   border-radius: @border-radius-med;
@@ -83,37 +101,45 @@
 };
 
 //button hover
+@hover-amount: 15%;
+@hover-desat: 50%;
+@btn-hover: {
+  background-color: darken(@med, @hover-amount);
+}
 @primary-hover: {
-  background-color: darken(@primary, 5%);
+  background-color: desaturate(darken(@primary, @hover-amount), @hover-desat);
 };
 @secondary-hover: {
-  background-color: darken(@secondary, 25%);
+  background-color: desaturate(darken(@secondary, @hover-amount), @hover-desat);
 };
 @warning-hover: {
-  background-color: darken(@warning, 25%);
+  background-color: desaturate(darken(@warning, @hover-amount), @hover-desat);
 };
 @danger-hover: {
-  background-color: darken(@danger, 25%);
+  background-color: desaturate(darken(@danger, @hover-amount), @hover-desat);
 };
 @info-hover: {
-  background-color: darken((@info, 25%));
+  background-color: desaturate(darken(@info, @hover-amount), @hover-desat);
 };
 
-//focus
+@focus-darken-amount: 25%;
+@btn-focus:{
+  background-color: darken(@med, 2@focus-darken-amount);
+}
 @primary-focus: {
-  background-color: darken(@primary: 50%);
-};
+  background-color: darken(@primary, @focus-darken-amount);
+}
 @secondary-focus: {
-  background-color: darken(@secondary, 25%);
+  background-color: darken(@secondary, @focus-darken-amount);
 };
 @warning-focus: {
-  background-color: darken(@warning, 25%);
+  background-color: darken(@warning, @focus-darken-amount);
 };
 @danger-focus: {
-  background-color: darken(@danger, 25%);
+  background-color: darken(@danger, @focus-darken-amount);
 };
 @info-focus: {
-  background-color: darken((@info, 25%));
+  background-color: darken(@info, @focus-darken-amount);
 };
 
 // forms and controls
@@ -146,7 +172,7 @@
 };
 
 @checkbox-checked: {
-  background-color: @color-dark;
+  background-color: @dark;
   color: antiquewhite;
   display: inline-block;
 };
@@ -166,7 +192,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: @color-dark;
+  background-color: @dark;
   color: white;
   display: inline-block;
   border-radius: 0.5rem;
@@ -200,4 +226,4 @@
   border: @border-small solid @border-color-dark;
   border-radius: @border-radius-small;
   box-shadow: @box-shadow-small-light;
-}; ;
+}; ; ;

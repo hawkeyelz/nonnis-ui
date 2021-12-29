@@ -1,26 +1,76 @@
-.primary{
+.container {
+  display: flex;
+}
+
+.row {
+  flex-direction: row wrap;
+}
+
+.container-inline {
+  display: inline-flex;
+}
+.row {
+
+}
+
+h1 {
+  font-size: @h1;
+  @h();
+}
+h2 {
+  font-size: @h2;
+  @h();
+}
+h3 {
+  font-size: @h3;
+  @h();
+}
+h4 {
+  font-size: @h4;
+  @h();
+}
+h5 {
+  font-size: @h5;
+  @h();
+}
+.primary {
   background-color: @primary;
   color: @primary-comp;
 }
-.secondary{
+.secondary {
   background-color: @secondary;
   color: @secondary-comp;
 }
-.warning{
+.warning {
   background-color: @warning;
   color: @warning-comp;
 }
-.danger{
+.danger {
   background-color: @danger;
   color: @danger-comp;
 }
-.info{
+.info {
   background-color: @info;
   color: @info-comp;
 }
 
-.btn {
+.text-primary {
   color: @primary-color;
+}
+.text-secondary {
+  color: @secondary;
+}
+.text-warning {
+  color: @warning;
+}
+.text-danger {
+  color: @danger;
+}
+.text-info {
+  color: @info;
+}
+
+.btn {
   border-color: @border-color-dark;
   border: 1px solid;
   border-radius: 4px;
@@ -29,23 +79,139 @@
   @button();
 }
 
-.btn-small {
+.btn.small {
   @button-small();
 }
 
-.btn-med {
+.btn.med {
   @button-med();
 }
-.btn-lg {
+.btn.lg {
   @button-lg();
 }
-.btn-xl{
+.btn.xl {
   @button-xl();
 }
 
-.btn-xxl {
+.btn.xxl {
   @button-xxl();
 }
+
+.btn:hover {
+  @btn-hover();
+}
+
+.btn.primary:hover{
+  @primary-hover();
+}
+.btn.secondary:hover {
+  @secondary-hover();
+}
+.btn.danger:hover {
+  @danger-hover();
+}
+.btn.warning:hover {
+  @warning-hover();
+}
+.btn.info:hover {
+  @info-hover();
+}
+
+.btn.focus:focus{
+  @btn-focus();
+}
+.btn.focus.primary:focus{
+  @primary-focus();
+}
+.btn.focus.secondary:focus {
+  @secondary-focus();
+}
+.btn.focus.warning:focus {
+  @warning-focus();
+}
+.btn.focus.danger:focus {
+  @danger-focus();
+}
+.btn.focus.info:focus {
+  @info-focus();
+}
+
+.btn.fous:out
+
+.btn.primary-outline {
+  border: @border-primary;
+  border-width: @border-small;
+  color: @primary;
+}
+
+.btn.secondary-outline {
+  border: @border-secondary;
+  border-width: @border-small;
+  color:@secondary;
+}
+
+.btn.warning-outline {
+  border: @border-warning;
+  border-width: @border-small;
+  color: @warning;
+}
+
+.btn.danger-outline {
+  border: @border-danger;
+  border-width: @border-small;
+  color: @danger;
+}
+
+.btn.info-outline {
+  border: @border-info;
+  border-width: @border-small;
+  color: @info;
+}
+
+.btn.primary-outline:hover:hover {
+  background-color: rgba(@primary, .075);
+}
+
+.btn.secondary-outline:hover {
+  background-color: rgba(@secondary,.075);
+}
+
+.btn.warning-outline:hover {
+  background-color: rgba(@warning,.075);
+}
+
+.btn.danger-outline:hover {
+  background-color: rgba(@danger,.075);
+}
+
+.btn.info-outline:hover {
+  background-color: rgba(@info,.075);
+}
+
+.btn.btn-outline.focus:focus {
+  background-color: rgba(@med, 0.5);
+}
+.btn.btn.focus.primary-outline:focus {
+  background-color: rgba(@primary,.05);
+}
+
+.btn.btn.focus.secondary-outline:focus {
+  background-color: rgba(@secondary,.05);
+}
+
+.btn.btn.focus.warning-outline:focus {
+  background-color: rgba(@warning,.05);
+}
+
+.btn.btn.focus.danger-outline:focus {
+  background-color: rgba(@danger,.05);
+}
+
+.btn.focus.info-outline:focus {
+  background-color: rgba(@info,.05);
+}
+
+
 
 :root {
   font-size: 16px;
@@ -58,7 +224,7 @@
   @hero();
 }
 
-.card{
+.card {
   @card();
 }
 
@@ -66,27 +232,27 @@ form {
   @form();
 }
 
-form> input {
+form > input {
   @input();
 }
-form> input:focus {
+form > input:focus {
   // outline: blueviolet solid 6px;
   box-shadow: 0 0 2px 1px @primary;
 }
 
-form>label{
+form > label {
   @label();
 }
 
-form>input[type="checkbox"]{
+form > input[type="checkbox"] {
   @checkbox();
 }
 
-form>input[type="radio"]{
+form > input[type="radio"] {
   @radio();
 }
 
-form>input[type="checkbox"]:checked::after{
+form > input[type="checkbox"]:checked::after {
   position: absolute;
   vertical-align: baseline;
   display: flexbox;
@@ -101,12 +267,12 @@ form>input[type="checkbox"]:checked::after{
   font-weight: bold;
   width: 100%;
   height: 100%;
-  background-image: url('./webfonts/checkmark.svg');
+  background-image: url("./webfonts/checkmark.svg");
   background-size: cover;
   background-color: white;
   border: 1px white solid;
 }
-form>input[type="checkbox"]:checked{
+form > input[type="checkbox"]:checked {
   position: relative;
   display: flex;
   vertical-align: middle;
@@ -117,8 +283,25 @@ form>input[type="checkbox"]:checked{
   overflow: hidden;
 }
 
-form>input[type="radio"]:checked::after{
+form > input[type="radio"]:checked::after {
   @radio-checked();
+}
+
+
+.dropdown {
+  position:relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160xp;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 

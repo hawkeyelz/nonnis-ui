@@ -9,6 +9,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ItemComponent } from './components/inventory/item/item.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorpageComponent } from './components/errorpage/errorpage.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { ModalComponent } from './components/modal/modal.component';
+import {DatesService} from './services/dates.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { ErrorpageComponent } from './components/errorpage/errorpage.component';
     AboutComponent,
     ItemComponent,
     HomeComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    DatePickerComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

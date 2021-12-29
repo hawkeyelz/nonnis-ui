@@ -1,0 +1,15 @@
+<div class="date-picker-container">
+  <div class="date-picker-grid">
+    <div>Sun</div>
+    <div>Mon</div>
+    <div>Tues</div>
+    <div>Wed</div>
+    <div>Thurs</div>
+    <div>Fri</div>
+    <div>Sat</div>
+    <div *ngFor="let date of dates">
+      <span class="day">{{date.date.getDate()}}</span>
+    </div>
+  </div>
+HERE
+</div>
