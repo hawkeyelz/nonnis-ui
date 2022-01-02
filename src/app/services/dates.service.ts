@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵisSubscribable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Day } from '../interfaces/dates';
 import { specialDate } from '../interfaces/specialDate';
 
@@ -8,6 +9,22 @@ import { specialDate } from '../interfaces/specialDate';
 export class DatesService {
   ImportantDays: Date[] = [];
   Holidays: Date[] = [];
+  Months: Observable<string[]> = new BehaviorSubject<string[]>([
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'June',
+    'July',
+    'Aug',
+    'Sept',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]);
+
+
   today: Date;
   constructor() {
     this.today = new Date();
@@ -82,13 +99,13 @@ export class DatesService {
       important: false,
     };
     const today = new Date();
-    if (this.compairDates(today, date)) {
+    if (this.comparDates(today, date)) {
       sd.current = true;
       return sd;
     }
 
     for (let i = 0; i < this.Holidays.length; i++) {
-      if (this.compairDates(this.Holidays[i], date)) {
+      if (this.comparDates(this.Holidays[i], date)) {
         sd.holiday = true;
         return sd;
         break;
@@ -96,7 +113,7 @@ export class DatesService {
     }
 
     for (let i = 0; i < this.ImportantDays.length; i++) {
-      if (this.compairDates(this.ImportantDays[i], date)) {
+      if (this.comparDates(this.ImportantDays[i], date)) {
         sd.important = true;
         return sd;
         break;
@@ -106,9 +123,25 @@ export class DatesService {
     return sd;
   }
 
-  compairDates(date1: Date, date2: Date): boolean {
+  comparDates(date1: Date, date2: Date): boolean {
     let d1: string = `${date1.getMonth()} ${date1.getDate()} ${date1.getFullYear()}`;
     let d2: string = `${date2.getMonth()} ${date2.getDate()} ${date2.getFullYear()}`;
     return d1 === d2;
+  }
+
+  validateDate(dateString: string): boolean {
+    console.log(dateString, Date.parse(dateString));
+    if (!isNaN(Date.parse(dateString))) {
+      return true;
+    }
+    return false;
+  }
+
+  getMonthAbv(month: number): string {
+    let abv = '';
+  this.Months.subscribe(mon => {
+      abv= mon[month];
+    });
+    return abv;
   }
 }
