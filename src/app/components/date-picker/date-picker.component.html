@@ -14,7 +14,7 @@
     [ngClass]="{ invalid: !validDate }"
   />
   <button
-    class="dpBtn"
+    class="dpBtn wf-calender"
     alt="open datepicker"
     (click)="datePickerClick()"
   ></button>
@@ -22,23 +22,23 @@
     <div class="year-month-selection">
       <div>{{ selectedYear }}</div>
       <div>
-        <button (click)="yearChange(+1)" class="btn small button-up"></button>
-        <button (click)="yearChange(-1)" class="btn small button-down"></button>
+        <button (click)="yearChange(+1)" class="btn small up wf-arrow-up"></button>
+        <button (click)="yearChange(-1)" class="btn small down wf-arrow-down"></button>
       </div>
       <div>{{ monthDisplay }}</div>
       <div>
-        <button (click)="monthChange(+1)" class="btn small button-up"></button>
-        <button (click)="monthChange(-1)" class="btn small button-down"></button>
+        <button (click)="monthChange(+1)" class="btn small up wf-arrow-up"></button>
+        <button (click)="monthChange(-1)" class="btn small down wf-arrow-down"></button>
       </div>
     </div>
     <div class="date-picker-grid">
-      <div class="date-label">Sun</div>
-      <div class="label">Mon</div>
-      <div class="label">Tues</div>
-      <div class="label">Wed</div>
-      <div class="label">Thurs</div>
-      <div class="label">Fri</div>
-      <div class="label">Sat</div>
+      <div class="date-col-header">Sun</div>
+      <div class="date-col-header">Mon</div>
+      <div class="date-col-header">Tues</div>
+      <div class="date-col-header">Wed</div>
+      <div class="date-col-header">Thurs</div>
+      <div class="date-col-header">Fri</div>
+      <div class="date-col-header">Sat</div>
       <div
         (click)="dateClick(date.date)"
         class="date"
@@ -46,12 +46,15 @@
         [ngClass]="{
           current: date.special.current,
           holiday: date.special.holiday,
-          important: date.special.important
+          important: date.special.important,
+          selected: date.special.selected,
+          other: date.special.other
         }"
       >
         <span class="day">{{ date.date.getDate() }}</span>
       </div>
     </div>
-    <button class="btn small primary" (click)="setToday()">TODAY</button>
+    <button class="btn small date-clear" (click)="clear()">Clear</button>
+    <button class="btn small date-today" (click)="setToday()">TODAY</button>
   </div>
 </div>

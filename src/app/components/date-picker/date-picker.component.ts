@@ -16,6 +16,7 @@ export class DatePickerComponent implements OnInit {
   selectedYear: number = 0;
   selectedMonth: number = 0;
   selectedDay: number = 1;
+  selectedDate: Date = new Date();
   dates: Day[] = [];
   monthDisplay: string = '';
 
@@ -26,7 +27,7 @@ export class DatePickerComponent implements OnInit {
     this.currentDate = `${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getFullYear()}`;
     this.selectedYear = date.getUTCFullYear();
     this.selectedMonth = date.getUTCMonth();
-    this.dates = this.datesSrv.getDaysOfTheMonth(new Date());
+    this.updateDateCalender();
 
     //toggle date picker off when clicked outside the date picker component
     document.addEventListener('click', () => {
@@ -57,6 +58,7 @@ export class DatePickerComponent implements OnInit {
     this.selectedYear = date.getUTCFullYear();
     this.selectedMonth =  date.getUTCMonth();
     this.selectedDay = date.getUTCDate();
+    this.updateDateCalender();
   }
 
   modelChange(value: string) {
@@ -70,14 +72,15 @@ export class DatePickerComponent implements OnInit {
     }
   }
 
-  updateDateInputByCalControls(){
+  updateDateCalender(){
     const newDate = `${this.selectedMonth + 1}/${this.selectedDay}/${this.selectedYear}`;
-    console.log('here>>');
     const valid = this.datesSrv.validateDate(newDate);
     this.validDate = valid;
     if (valid){
       this.currentDate = newDate;
+      this.selectedDate = new Date(this.selectedYear, this.selectedMonth + 1, 1);
       this.dates = this.datesSrv.getDaysOfTheMonth(new Date(newDate));
+      this.monthDisplay = this.datesSrv.getMonthAbv(this.selectedMonth);
     }
   }
 
@@ -93,7 +96,7 @@ export class DatePickerComponent implements OnInit {
 
   yearChange(num: number) {
     this.selectedYear += num;
-    this.updateDateInputByCalControls();
+    this.updateDateCalender();
   }
   monthChange(num: number) {
     this.selectedMonth += num;
@@ -105,8 +108,7 @@ export class DatePickerComponent implements OnInit {
       this.selectedMonth = 0;
       this.selectedYear += num;
     }
-    this.monthDisplay = this.datesSrv.getMonthAbv(this.selectedMonth);
-    this.updateDateInputByCalControls();
+    this.updateDateCalender();
   }
 
   setToday(){
@@ -114,6 +116,12 @@ export class DatePickerComponent implements OnInit {
     this.selectedYear = today.getUTCFullYear();
     this.selectedMonth = today.getUTCMonth();
     this.selectedDay = today.getUTCDate();
-    this.updateDateInputByCalControls();
+    this.updateDateCalender();
+    this.togglePicker = false;
+  }
+
+  clear() {
+    this.currentDate = '';
+    this.togglePicker = false;
   }
 }

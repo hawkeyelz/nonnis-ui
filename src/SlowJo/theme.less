@@ -226,4 +226,55 @@
   border: @border-small solid @border-color-dark;
   border-radius: @border-radius-small;
   box-shadow: @box-shadow-small-light;
-}; ; ;
+};
+
+
+@date-current: {
+  background-color: rgb(0, 162, 255);
+  border: black solid 1px;
+};
+@date-selected: {
+  background-color: rgb(0, 132, 255);
+  color: @primary-color;
+};
+@date-holiday: {
+  color: red;
+};
+@date-important: {
+  color: coral;
+};
+@date-other: {
+  color: gray;
+};
+@date: {
+  border: rgb(238, 238, 238) solid 1px;
+};
+
+@date-clear: {
+  background-color: rgb(240, 170, 145);
+  border: black solid 1px;
+};
+
+@date-today: {
+  background-color: rgb(0, 162, 255);
+  border: black solid 1px;
+}
+
+
+
+
+
+
+@date-hover: {};
+@date-current-hover:{};
+@date-selected-hover: {};
+@date-holiday-hover:{};
+@date-important-hover:{};
+@date-other-hover:{};
+
+@date-hover:{
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+};
