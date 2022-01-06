@@ -1,1 +1,41 @@
-<p>modal works!</p>
+<div class="modal" aria-label="modal" [ngClass]="{ hidden: !ShowModal }">
+  <section class="modal-conainer">
+    <header class="modal-header">
+      <div></div>
+      <h1 class="modal-header-text center" aria-label="modal title">
+        {{ headerText }}
+      </h1>
+      <div>
+        <button
+          class="btn small down wf-close"
+          aria-label="Modal close button"
+          (click)="cancel()"
+        ></button>
+      </div>
+    </header>
+    <article class="modal-conent box-shadow">
+      <ng-content aria-atomic="true" aria-live="polite"> </ng-content>
+    </article>
+    <footer class="modal-footer">
+      <div>
+        <h3 class="modal-footer-txt center">{{ footerText }}</h3>
+      </div>
+      <div class="modal-footer-buttons">
+        <button
+          class="btn med primary"
+          (click)="ok()"
+          aria-label="modal Ok button"
+        >
+          Ok
+        </button>
+        <button
+          class="btn med warning"
+          (click)="cancel()"
+          aria-label="modal Cancel button"
+        >
+          Cancel
+        </button>
+      </div>
+    </footer>
+  </section>
+</div>

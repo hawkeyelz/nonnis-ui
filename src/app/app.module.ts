@@ -13,6 +13,8 @@ import { ErrorpageComponent } from './components/errorpage/errorpage.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { ModalComponent } from './components/modal/modal.component';
 import {DatesService} from './services/dates.service';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselItemComponent } from './components/carousel/carousel-item/carousel-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {DatesService} from './services/dates.service';
     HomeComponent,
     ErrorpageComponent,
     DatePickerComponent,
-    ModalComponent
+    ModalComponent,
+    CarouselComponent,
+    CarouselItemComponent
   ],
   imports: [
     BrowserModule,

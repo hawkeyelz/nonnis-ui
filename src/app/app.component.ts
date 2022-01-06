@@ -8,6 +8,12 @@ import { DatesService } from './services/dates.service';
 })
 export class AppComponent {
   title = 'nonnis-ui';
+  showModal:boolean = false;
   constructor(datesServ: DatesService){
   }
+  closeModal(){
+    this.showModal = false;
+  }
 }
+
+

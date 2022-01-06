@@ -1,4 +1,4 @@
-@import url('./slowjowebfont.less');
+@import url("./slowjowebfont.less");
 .container {
   display: flex;
 }
@@ -11,6 +11,30 @@
   display: inline-flex;
 }
 .row {
+}
+
+.pd-1 {
+  padding: 1rem;
+}
+
+.pd-1-5 {
+  padding: 1.5rem;
+}
+
+.pd-2 {
+  padding: 2rem;
+}
+
+.pd-2-5 {
+  padding: 2.5rem;
+}
+
+.pd-3 {
+  padding: 3rem;
+}
+
+.pd-3-5 {
+  padding: 3.5rem;
 }
 
 h1 {
@@ -73,7 +97,7 @@ h5 {
 .btn {
   border-color: @border-color-dark;
   border: 1px solid;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
   @button();
@@ -166,6 +190,14 @@ h5 {
   color: @info;
 }
 
+btn.hollow {
+  border: @border-hallow;
+  border-width: @border-small;
+  color: @hallow;
+  background-color: rgba(0, 0, 0, 0, 0);
+}
+
+
 .btn.primary-outline:hover:hover {
   background-color: rgba(@primary, 0.075);
 }
@@ -184,6 +216,10 @@ h5 {
 
 .btn.info-outline:hover {
   background-color: rgba(@info, 0.075);
+}
+
+.btn.hallow:hover {
+  @hollow-hover();
 }
 
 .btn.btn-outline.focus:focus {
@@ -322,7 +358,6 @@ form > input[type="radio"]:checked::after {
   height: 100%;
 }
 
-
 .date.selected {
   @date-selected();
 }
@@ -335,11 +370,11 @@ form > input[type="radio"]:checked::after {
   @date-current();
 }
 
-.date.important{
+.date.important {
   @date-important();
 }
 
-.date.selected:hover{
+.date.selected:hover {
   @date-selected-hover();
 }
 
@@ -357,7 +392,7 @@ form > input[type="radio"]:checked::after {
 .date.other {
   @date-other();
 }
-.date.other:hover{
+.date.other:hover {
   @date-other-hover();
 }
 
@@ -365,11 +400,11 @@ form > input[type="radio"]:checked::after {
   @date();
 }
 
-.date:hover{
+.date:hover {
   @date-hover();
 }
 
-.date-col-header{
+.date-col-header {
   margin: auto;
   text-align: center;
   font-size: 1.125rem;
@@ -386,3 +421,167 @@ form > input[type="radio"]:checked::after {
 .date-today {
   @date-today();
 }
+
+.center {
+  text-align: center;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.fex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row-r {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-col-r {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.flex-middle {
+  display: flex;
+  vertical-align: middle;
+}
+
+.flex-center {
+  display: flex;
+  align-content: center;
+}
+
+//borders and box shadows
+
+.border-primary{
+    border-color: @primary;
+    border-style: solid;
+}
+
+.border-secondary{
+  border-color: @secondary;
+  border-style: solid;
+}
+
+.border-warning{
+  border-color: @warning;
+  border-style: solid;
+}
+
+border-danger{
+  border-color: @danger;
+  border-style: solid;
+}
+
+
+@border-color-light: rgb(255, 255, 255) solid;
+@border-color-dark: rgb(0, 0, 0);
+@border-color-light-med: rgb(150, 150, 150) solid;
+@border-color-dark-med: rgb(75, 75, 75) solid;
+@border-small: 1px;
+@border-med: 3px;
+@border-lg: 5px;
+@border-xlg: 7px;
+
+
+
+.box-shadow-small-light {
+ box-shadow:  @box-shadow-small-light;
+}
+.box-shadow-med-light {
+  box-shadow:  @box-shadow-med-light;
+}
+.box-shadow-lg-light {
+  box-shadow:  @box-shadow-lg-light;
+}
+.box-shadow-small-dark{
+  box-shadow:  @box-shadow-small-dark;
+}
+.box-shadow-med-dark{
+  box-shadow:  @box-shadow-med-dark;
+}
+.box-shadow-lg-dark{
+  box-shadow:  @box-shadow-lg-dark;
+}
+
+
+//active buttons
+
+.btn.active {
+   background-color: @active;
+}
+
+.btn.primary.active {
+  background-color: @primary;
+}
+
+.btn.secondary.active {
+  background-color: @secondary;
+}
+
+.btn.warning.active {
+  background-color: @warning;
+}
+
+.btn.danger.active {
+  background-color: @danger;
+}
+
+.btn.info.active {
+  background-color: @info;
+}
+
+
+//inactive buttons
+.btn.inactive {
+  background-color: @inactive;
+}
+.btn.primary.inactive {
+  background-color: desaturate(@primary, @inactiveDesat);
+}
+
+.btn.secondary.inactive {
+  background-color: desaturate(@secondary, @inactiveDesat);
+}
+
+.btn.warning.inactive {
+  background-color: desaturate(@warning, @inactiveDesat);
+}
+
+.btn.danger.inactive {
+  background-color: desaturate(@danger, @inactiveDesat);
+}
+
+.btn.info.iniactive {
+  background-color: desaturate(@info, @inactiveDesat);
+}
+
+//carousel
+.carousel-item.right {
+background-color: red;
+width: 30%;
+}
+
+.carousel-item.active{
+background-color: blue;
+  width: 40%;
+}
+
+.carousel-item.left {
+  background-color: green;
+  width: 30%;
+}
+

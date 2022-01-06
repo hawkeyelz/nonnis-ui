@@ -1,0 +1,20 @@
+<div class="carousel-container box-shadow-small-dark border-">
+  <div class="carousel">
+
+  <div class="carousel-controls">
+    <div class="carousel-control-left">
+    <button class="wf-left btn hallow lg"></button>
+    </div>
+    <div class="carousel-control-right">
+      <button class="wf-right btn hallow lg"></button>
+    </div>
+  </div>
+<ng-content></ng-content>
+
+</div>
+<footer class="carousel-footer">
+  <ul class="carousel-selector-control">
+    <li *ngFor="let item of carouselItemArray; let i=index"><button class="btn carousel-btn active dave"[ngClass]="{'active': item, 'hallow':!item}" (click)="selectSlide(i)"></button></li>
+  </ul>
+  </footer>
+</div>

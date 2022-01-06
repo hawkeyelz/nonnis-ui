@@ -1,0 +1,88 @@
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  width: 1000px;
+  margin-top: 5px;
+  background-color: greenyellow;
+}
+
+.carousel-control {
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-control-left {
+  padding-left: 1rem;
+  top: 0;
+  left: 0;
+  .carousel-control;
+}
+
+.carousel-control-right{
+  padding-right: 1rem;
+  top: 0;
+  right: 0;
+  .carousel-control;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.side-right {
+  left: 100%;
+  background-color: orangered;
+
+}
+
+.side-left {
+  left: -100%;
+  background-color: red;
+
+}
+
+.carousel-btn{
+  padding: .25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: .5rem;
+}
+.carousel-footer {
+  display: flex;
+  flex-flow: row wrap;
+  position: absolute;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  vertical-align: middle;
+  justify-content: center;
+  left: 0;
+  bottom: 1rem;
+  height: .5rem;
+  width: 100%;
+}
+
+.carousel-selector-control {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  align-items: center;
+
+  justify-content: center;
+  vertical-align: baseline;
+  width: 100%;
+  height: auto;
+}
+
+.dave {
+  border: 2px solid orangered;
+}

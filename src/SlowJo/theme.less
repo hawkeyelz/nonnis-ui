@@ -4,7 +4,9 @@
 @dark: rgb(0, 0, 0);
 
 @disabled: rgb(50, 75, 75);
-@active: rgb(25, 75, 75);
+@active: rgb(155, 155, 155);
+@inactive: rgb(55, 55,55);
+@inactiveDesat: 50%;
 
 //main colors
 @primary: rgb(0, 0, 255);
@@ -45,6 +47,7 @@
 @border-warning: @warning solid;
 @border-danger: @danger solid;
 @border-info: @info solid;
+@border-hallow: black solid;
 
 @border-color-light: rgb(255, 255, 255) solid;
 @border-color-dark: rgb(0, 0, 0);
@@ -62,12 +65,12 @@
 @border-radius-xlg: 1.25rem;
 
 //drop-shadows
-@box-shadow-small-light: 1px 2px rgb(150, 150, 150);
-@box-shadow-med-light: 2px 3px rgb(150, 150, 150);
-@box-shadow-lg-light: 3px 4px rgb(150, 150, 150);
-@box-shadow-small-dark: 1px 2px rgb(25, 25, 25);
-@box-shadow-med-dark: 2px 3px rgb(25, 25, 25);
-@box-shadow-lg-dark: 3px 4px rgb(25, 25, 25);
+@box-shadow-small-light: 1px 2px 2px rgb(150, 150, 150);
+@box-shadow-med-light: 2px 3px 3px rgb(150, 150, 150);
+@box-shadow-lg-light: 3px 4px 4px rgb(150, 150, 150);
+@box-shadow-small-dark: 1px 2px 2px rgb(25, 25, 25);
+@box-shadow-med-dark: 2px 3px 3px rgb(25, 25, 25);
+@box-shadow-lg-dark: 3px 4px 4px rgb(25, 25, 25);
 
 //buttons
 @button: {
@@ -80,23 +83,23 @@
   height: fit-content;
 };
 @button-small: {
-  padding: calc(@small / 2.5) calc @small calc(@small / 2.5) @small;
+  padding: calc(@small*.5);
   font-size: @small;
 };
 @button-med: {
-  padding: calc(@medium / 2.5) calc @medium calc(@medium / 2.5) @medium;
+  padding: calc(@medium*.5);
   font-size: @medium;
 };
 @button-lg: {
-  padding: calc(@large / 2.5) calc @large calc(@large / 2.5) @large;
+  padding: calc(@large*.5);
   font-size: @large;
 };
 @button-xl: {
-  padding: calc(@xlarge / 2.5) calc @xlarge calc(@xlarge / 2.5) @xlarge;
+  padding: calc(@xlarge*.5);
   font-size: @xlarge;
 };
 @button-xxl: {
-  padding: calc(@xxl / 2.5) calc @xxl calc(@medium / 2.5) @xxl;
+  padding: calc(@xxl*.5);
   font-size: @xxl;
 };
 
@@ -121,6 +124,9 @@
 @info-hover: {
   background-color: desaturate(darken(@info, @hover-amount), @hover-desat);
 };
+@hollow-hover: {
+  background-color: rgba(75, 75, 75, 0.192);
+}
 
 @focus-darken-amount: 25%;
 @btn-focus:{
@@ -260,6 +266,8 @@
   border: black solid 1px;
 }
 
+@hallow: black;
+
 
 
 
@@ -278,3 +286,7 @@
   border: 1px solid black;
   border-radius: 3px;
 };
+
+.hidden{
+  display: none;
+}

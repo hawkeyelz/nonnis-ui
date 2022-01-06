@@ -114,7 +114,6 @@ export class DatesService {
     }
 
     if (this.selected && this.comparDates(this.selected, date)) {
-      console.log(this.selected, (this.selected, date));
       sd.selected = true;
       return sd;
     }
@@ -139,7 +138,6 @@ export class DatesService {
   }
 
   validateDate(dateString: string): boolean {
-    console.log(dateString, Date.parse(dateString));
     if (!isNaN(Date.parse(dateString))) {
       return true;
     }

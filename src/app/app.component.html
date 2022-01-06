@@ -1,6 +1,21 @@
 <main class="container">
+  <app-modal [ShowModal]="showModal" headerText="Modal header" footerText="Modal Footer" (okModal)="showModal = false"> </app-modal>
 
   <app-heading></app-heading>
+  <ul appCarouselItem>
+    <li>Test1</li>
+    <li>Test2</li>
+    <li>Test3</li>
+  </ul>
+  <br/>
+  <app-carousel>
+    <div class="carousel-item" #carouseItem> I Like Pie</div>
+    <div class="carousel-item" #carouseItem>I LIKE Cake</div>
+    <div class="carousel-item active" #carouseItem>Cobbler</div>
+    <div class="carousel-item" #carouseItem>Cookies</div>
+  </app-carousel>
+
+
   <section class="row">
     <h1>Buttons</h1>
     <article>
@@ -21,36 +36,36 @@
     </article>
     <article>
       <h2>Buttons Outline Colors</h2>
-      <button class="btn btn med primary-outline">Primary</button>
-      <button class="btn btn med secondary-outline">Secondary</button>
-      <button class="btn btn med warning-outline">Warning</button>
-      <button class="btn btn med danger-outline">Danger</button>
-      <button class="btn btn med info-outline">Info</button>
+      <button class="btn med primary-outline">Primary</button>
+      <button class="btn med secondary-outline">Secondary</button>
+      <button class="btn med warning-outline">Warning</button>
+      <button class="btn med danger-outline">Danger</button>
+      <button class="btn med info-outline">Info</button>
     </article>
     <article>
       <h2>Focus Buttons</h2>
-      <button class="btn btn med focus">button</button>
-      <button class="btn btn med primary focus">Primary</button>
-      <button class="btn btn med secondary focus">Secondary</button>
-      <button class="btn btn med warning focus">Warning</button>
-      <button class="btn btn med danger focus">Danger</button>
-      <button class="btn btn med info focus">Info</button>
+      <button class="btn med focus">button</button>
+      <button class="btn med primary focus">Primary</button>
+      <button class="btn med secondary focus">Secondary</button>
+      <button class="btn med warning focus">Warning</button>
+      <button class="btn med danger focus">Danger</button>
+      <button class="btn med info focus">Info</button>
     </article>
-
   </section>
 
-
-
-  <div class="hero">This is a hero Card
-    <br/>
-    <br/>
+  <div class="hero">
+    Hero
+    <br />
+    <br />
     <label>Date Picker: </label>
     <app-date-picker></app-date-picker>
-
-    <label>HTML Date Picker:</label>
-    <input type="date"/>
+    <br />
+    <button class="btn med primary" (click)="showModal = !showModal">
+      Show Modal
+    </button>
   </div>
-  <div class="card">This is a card</div>
+
+  <div class="card">Card</div>
   <form>
     <label>input 1</label>
     <input type="text" />
@@ -60,21 +75,15 @@
     <select>
       <option>Option1</option>
       <option>Option2</option>
-          <option>Option3</option>
-        </select>
-      </form>
+      <option>Option3</option>
+    </select>
+  </form>
 
-
-    <div>
-      <div class="dropdown">
-        <span>Mouse over me</span>
-        <div class="dropdown-content">
-          <p>Hello World!</p>
-        </div>
-      </div>
+  <div>
+    <div class="dropdown">
+      <span>Mouse over me</span>
+      <div class="dropdown-content"></div>
     </div>
-
-    <h1>Date Picker</h1>
-    <router-outlet></router-outlet>
-  </main>
-
+  </div>
+  <router-outlet></router-outlet>
+</main>
