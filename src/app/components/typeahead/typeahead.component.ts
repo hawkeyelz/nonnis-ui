@@ -11,18 +11,21 @@ export class TypeaheadComponent implements OnInit {
   public typeaheadData = ['bo', 'dave', 'fran', 'clive', 'danny', 'Ralf'];
   public filteredData: TypeAheadItem[] = [];
   public showList = false;
+  private mouseInLIst =false;
+  public currentLIstIndex = 0;
+  public inputFocused:boolean = false;
   constructor() {}
   @Input() CaseSensitive: boolean = false;
   ngOnInit(): void {}
   onChange(value: string): void {
     this.typeAheadValue = value;
-    console.log(value);
     this.checkDataForValue(value);
   }
 
   selectFromDropDown(item:TypeAheadItem){
     this.typeAheadValue = item.value;
     this.filteredData = [];
+    this.showList = false;
   }
 
 
@@ -30,27 +33,49 @@ export class TypeaheadComponent implements OnInit {
     this.filteredData = [];
     this.typeaheadData.forEach((str, idx) => {
       let found = false;
-      let returnValue:TypeAheadItem = { text: str, value: str};
       if (this.CaseSensitive) {
         found = str.includes(value);
-        returnValue = {text: str, value: str};
-        this.filteredData.push(returnValue);
-
       } else {
         found = str.toLowerCase().includes(value.toLowerCase());
       }
       if(found) {
 
-        returnValue = {
+        this.filteredData.push({
           value: str,
           text: str.replace(value,`<strong class="testme">${value}</strong>`)
-        };
-        this.filteredData.push(returnValue);
+        });
         return;
       }
-
-
     });
-    console.log(this.filteredData);
+    this.showList = (this.filteredData.length > 0)
+    this.currentLIstIndex = 0;
+  }
+
+  downKey() {
+    (this.filteredData.length > 0 && this.currentLIstIndex < this.filteredData.length -1) && this.currentLIstIndex ++;
+    console.log(this.currentLIstIndex);
+
+  }
+
+  upKey() {
+    (this.filteredData.length > 0 && this.currentLIstIndex > 0) && this.currentLIstIndex --;
+    console.log(this.currentLIstIndex);
+  }
+
+  enterKey() {
+    (this.filteredData.length > 0) && this.selectFromDropDown(this.filteredData[this.currentLIstIndex]);
+
+  }
+
+  keyPress(event:any){
+  if (event.keyCode === 38) {
+    this.upKey();
+  }
+  if (event.keyCode === 40){
+    this.downKey();
+  }
+  if(event.keyCode === 13){
+    this.enterKey();
+  }
   }
 }
