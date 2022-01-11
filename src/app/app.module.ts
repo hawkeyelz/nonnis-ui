@@ -16,6 +16,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import {DatesService} from './services/dates.service';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselItemComponent } from './components/carousel/carousel-item/carousel-item.component';
+import { TypeaheadComponent } from './components/typeahead/typeahead.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CarouselItemComponent } from './components/carousel/carousel-item/carou
     DatePickerComponent,
     ModalComponent,
     CarouselComponent,
-    CarouselItemComponent
+    CarouselItemComponent,
+    TypeaheadComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

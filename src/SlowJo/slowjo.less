@@ -646,3 +646,54 @@ border-danger{
   }
 }
 
+.typeahead {
+  border: 1px solid black;
+  height: 1rem;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.typeahead-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: fit-content;
+}
+.typeahead-container>input{
+  width: 100%;
+}
+.typehead-list {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem 0 .5rem 0;
+  margin-top: .5rem;
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: @border-radius-med;
+  box-shadow: @box-shadow-med-dark;
+  overflow-x: hidden;
+}
+
+.typehead-list-item {
+  cursor: pointer;
+  left: 0px;
+  width: 110%;
+  height: fit-content;
+  padding: 1rem 1rem  1rem 1rem;
+
+}
+
+.typehead-list-item:hover {
+  background-color: blue;
+  color: white;
+
+}
+
+.typehead-list-item>strong {
+  font-weight: bold;
+  color: red;
+}
+
+
+

@@ -1,0 +1,6 @@
+<div class="typeahead-container">
+<input class="typeahead" [(ngModel)]= "typeAheadValue" (ngModelChange)="onChange($event)" type="text" placeholder="Place HOlder Text"/>
+<ul class="typehead-list">
+  <li  class="typehead-list-item" *ngFor="let item of filteredData" (click)="selectFromDropDown(item)" [innerHTML]=item.text></li>
+</ul>
+</div>
