@@ -14,7 +14,8 @@
 </div>
 <footer class="carousel-footer">
   <ul class="carousel-selector-control">
-    <li *ngFor="let item of itemArray; let i=index"><button class="btn carousel-btn active dave"[ngClass]="{'active': i === activeIndex, 'hallow':i != activeIndex}" (click)="selectSlide(i)"></button></li>
+    <li *ngFor="let item of itemArray; let i=index"><button class="btn carousel-btn active"[ngClass]="{'active': i === activeIndex, 'hallow':i != activeIndex}" (click)="selectSlide(i)"></button></li>
   </ul>
-  </footer>
+  <div class="carousel-selector-control"><button *ngIf="isAuto" class="btn carousel-btn wf-pause play-pause-btn" (click)="togglePlay()" [ngClass]="{'wf-play':!playing, 'wf-paused':playing}"></button></div>
+</footer>
 </div>
