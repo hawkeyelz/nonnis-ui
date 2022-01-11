@@ -3,10 +3,10 @@
 
   <div class="carousel-controls">
     <div class="carousel-control-left">
-    <button class="wf-left btn hallow lg"></button>
+    <button class="wf-left btn hallow lg" (click)="previousSlide()"></button>
     </div>
     <div class="carousel-control-right">
-      <button class="wf-right btn hallow lg"></button>
+      <button class="wf-right btn hallow lg" (click)="nextSlide()"></button>
     </div>
   </div>
 <ng-content></ng-content>
@@ -14,7 +14,7 @@
 </div>
 <footer class="carousel-footer">
   <ul class="carousel-selector-control">
-    <li *ngFor="let item of carouselItemArray; let i=index"><button class="btn carousel-btn active dave"[ngClass]="{'active': item, 'hallow':!item}" (click)="selectSlide(i)"></button></li>
+    <li *ngFor="let item of itemArray; let i=index"><button class="btn carousel-btn active dave"[ngClass]="{'active': i === activeIndex, 'hallow':i != activeIndex}" (click)="selectSlide(i)"></button></li>
   </ul>
   </footer>
 </div>
