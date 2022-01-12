@@ -50,6 +50,10 @@ export class TypeaheadComponent implements OnInit {
     this.inputFocused = false;
   }
 
+  inputMouseLeave() {
+    this.currentLIstIndex = -1;
+  }
+
   checkDataForValue(value: string): void {
     this.filteredData = [];
     this.typeaheadData.forEach((str, idx) => {

@@ -1,6 +1,22 @@
 <div class="typeahead-container">
-<input class="typeahead" [(ngModel)]= "typeAheadValue" (ngModelChange)="onChange($event)" type="text" placeholder="Place HOlder Text" (keydown)="keyPress($event)" (focus)="inputInFocus" (blur)="inputBlurred()"/>
-<ul class="typehead-list" [ngClass]="{'hidden': (filteredData.length === 0)}" >
-  <li  class="typehead-list-item" *ngFor="let item of filteredData; let i = index" (click)="selectFromDropDown(item)" [ngClass]="{'selected': selectItem(i)}" [innerHTML]=item.text></li>
-</ul>
+  <input
+    class="typeahead"
+    [(ngModel)]="typeAheadValue"
+    (ngModelChange)="onChange($event)"
+    type="text"
+    placeholder="Place HOlder Text"
+    (keydown)="keyPress($event)"
+    (focus)="(inputInFocus)"
+    (blur)="inputBlurred()"
+    (mouseleave)="inputMouseLeave()"
+  />
+  <ul class="typehead-list" [ngClass]="{ hidden: filteredData.length == 0 }">
+    <li
+      class="typehead-list-item"
+      *ngFor="let item of filteredData; let i = index"
+      (click)="selectFromDropDown(item)"
+      [ngClass]="{ selected: selectItem(i) }"
+      [innerHTML]="item.text"
+    ></li>
+  </ul>
 </div>

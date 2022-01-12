@@ -1,16 +1,26 @@
 @import url("./slowjowebfont.less");
+@import url("./sloJoBreakPoints.less");
 .container {
-  display: flex;
-}
+  padding: 5px;
+ width: 100%;
 
-.row {
-  flex-direction: row wrap;
 }
-
 .container-inline {
-  display: inline-flex;
+  padding: 5px;
+  display: inline-block;
+  min-width: fit-content;
 }
+
+.container-flex {
+  width: 100%;
+  display: flexbox;
+  padding: 5px;
+  flex-flow: row wrap;
+}
+
 .row {
+  display: block;
+  width: 100%;
 }
 
 .pd-1 {
@@ -656,7 +666,7 @@ border-danger{
 .typeahead-container {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
 }
 .typeahead-container>input{
@@ -669,7 +679,8 @@ border-danger{
   z-index: 2;
   padding: 1rem 0 .5rem 0;
   margin-top: .5rem;
-  border: 1px solid rgb(218, 218, 218);
+  background-color: @typeahead-background-color;
+  border: 1px solid @typeahead-border-color;
   border-radius: @border-radius-med;
   box-shadow: @box-shadow-med-dark;
   overflow-x: hidden;
@@ -680,24 +691,23 @@ border-danger{
   left: 0px;
   width: 110%;
   height: fit-content;
+  color: @typeahead-color;
   padding: 1rem 1rem  1rem 1rem;
 
 }
 
 .typehead-list-item:hover {
-  background-color: lightskyblue;
-  color: white;
+  background-color: @typeahead-selected-background-color;
+  color: @typeahead-selected-color;
 
 }
 
 .typehead-list-item>strong {
   font-weight: bold;
-  color: red;
+  color: @typeahead-value-color;
 }
 
 .typehead-list-item.selected {
-  background-color: lightskyblue;
+  background-color: @typeahead-selected-background-color;
+  color: @typeahead-selected-color;
 }
-
-
-
