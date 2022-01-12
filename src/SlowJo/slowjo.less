@@ -2,8 +2,7 @@
 @import url("./sloJoBreakPoints.less");
 .container {
   padding: 5px;
- width: 100%;
-
+  width: 100%;
 }
 .container-inline {
   padding: 5px;
@@ -21,6 +20,19 @@
 .row {
   display: block;
   width: 100%;
+}
+
+// Helper Classes
+.hidden {
+  display: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
 }
 
 .pd-1 {
@@ -206,7 +218,6 @@ btn.hollow {
   color: @hallow;
   background-color: rgba(0, 0, 0, 0, 0);
 }
-
 
 .btn.primary-outline:hover:hover {
   background-color: rgba(@primary, 0.075);
@@ -434,15 +445,24 @@ form > input[type="radio"]:checked::after {
 
 .center {
   text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
-.pull-right {
-  float: right;
+.v-center-inline {
+  display: inline-block;
+  line-height: 1.5;
+  vertical-align: middle;
 }
 
-.pull-left {
-  float: left;
+.v-center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
+
 
 .flex-row {
   display: flex;
@@ -476,26 +496,25 @@ form > input[type="radio"]:checked::after {
 
 //borders and box shadows
 
-.border-primary{
-    border-color: @primary;
-    border-style: solid;
+.border-primary {
+  border-color: @primary;
+  border-style: solid;
 }
 
-.border-secondary{
+.border-secondary {
   border-color: @secondary;
   border-style: solid;
 }
 
-.border-warning{
+.border-warning {
   border-color: @warning;
   border-style: solid;
 }
 
-border-danger{
+border-danger {
   border-color: @danger;
   border-style: solid;
 }
-
 
 @border-color-light: rgb(255, 255, 255) solid;
 @border-color-dark: rgb(0, 0, 0);
@@ -506,32 +525,29 @@ border-danger{
 @border-lg: 5px;
 @border-xlg: 7px;
 
-
-
 .box-shadow-small-light {
- box-shadow:  @box-shadow-small-light;
+  box-shadow: @box-shadow-small-light;
 }
 .box-shadow-med-light {
-  box-shadow:  @box-shadow-med-light;
+  box-shadow: @box-shadow-med-light;
 }
 .box-shadow-lg-light {
-  box-shadow:  @box-shadow-lg-light;
+  box-shadow: @box-shadow-lg-light;
 }
-.box-shadow-small-dark{
-  box-shadow:  @box-shadow-small-dark;
+.box-shadow-small-dark {
+  box-shadow: @box-shadow-small-dark;
 }
-.box-shadow-med-dark{
-  box-shadow:  @box-shadow-med-dark;
+.box-shadow-med-dark {
+  box-shadow: @box-shadow-med-dark;
 }
-.box-shadow-lg-dark{
-  box-shadow:  @box-shadow-lg-dark;
+.box-shadow-lg-dark {
+  box-shadow: @box-shadow-lg-dark;
 }
-
 
 //active buttons
 
 .btn.active {
-   background-color: @active;
+  background-color: @active;
 }
 
 .btn.primary.active {
@@ -553,7 +569,6 @@ border-danger{
 .btn.info.active {
   background-color: @info;
 }
-
 
 //inactive buttons
 .btn.inactive {
@@ -589,31 +604,30 @@ border-danger{
   left: -100%;
 }
 
-
-.carousel-item.active{
+.carousel-item.active {
   left: 0px;
 }
 
-.carousel-item.active-left{
+.carousel-item.active-left {
   left: 0px;
   animation-duration: @carousel-transition-time;
   animation-name: slide-in-right;
 }
 
-.carousel-item.active-right{
+.carousel-item.active-right {
   left: 0px;
   animation-duration: @carousel-transition-time;
   animation-name: slide-in-left;
 }
 
-.carousel-item.out-left{
+.carousel-item.out-left {
   left: -100%;
   animation-duration: @carousel-transition-time;
   animation-name: slide-out-left;
 }
 
-.carousel-item.out-right{
-  left:100%;
+.carousel-item.out-right {
+  left: 100%;
   animation-duration: @carousel-transition-time;
   animation-name: slide-out-right;
 }
@@ -626,7 +640,6 @@ border-danger{
   to {
     left: 0px;
   }
-
 }
 
 @keyframes slide-in-right {
@@ -647,7 +660,7 @@ border-danger{
   }
 }
 
-@keyframes slide-out-right{
+@keyframes slide-out-right {
   from {
     left: 0px;
   }
@@ -660,7 +673,7 @@ border-danger{
   border: 1px solid black;
   height: 1rem;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .typeahead-container {
@@ -669,7 +682,7 @@ border-danger{
   width: fit-content;
   height: fit-content;
 }
-.typeahead-container>input{
+.typeahead-container > input {
   width: 100%;
 }
 .typehead-list {
@@ -677,8 +690,8 @@ border-danger{
   left: 0px;
   width: 100%;
   z-index: 2;
-  padding: 1rem 0 .5rem 0;
-  margin-top: .5rem;
+  padding: 1rem 0 0.5rem 0;
+  margin-top: 0.5rem;
   background-color: @typeahead-background-color;
   border: 1px solid @typeahead-border-color;
   border-radius: @border-radius-med;
@@ -692,17 +705,15 @@ border-danger{
   width: 110%;
   height: fit-content;
   color: @typeahead-color;
-  padding: 1rem 1rem  1rem 1rem;
-
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .typehead-list-item:hover {
   background-color: @typeahead-selected-background-color;
   color: @typeahead-selected-color;
-
 }
 
-.typehead-list-item>strong {
+.typehead-list-item > strong {
   font-weight: bold;
   color: @typeahead-value-color;
 }
@@ -710,4 +721,114 @@ border-danger{
 .typehead-list-item.selected {
   background-color: @typeahead-selected-background-color;
   color: @typeahead-selected-color;
+}
+
+// navigation
+.nav-container {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: fit-content;
+  height: fit-content;
+  grid-row: auto;
+  display: grid;
+  padding: @nav-container-padding;
+  margin: @nav-container-margin;
+  border: @nav-container-border;
+  background: @nav-container-background;
+}
+.nav-list {
+  margin: 1rem 1rem 1rem 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-around;
+  width: fit-content;
+  height: fit-content;
+}
+
+.nav-brand {
+  float: left;
+  color: red;
+  background: orange;
+}
+
+.nav-item {
+  display: -ms-inline-flexbox;
+  height: 100%;
+  width: fit-content;
+  cursor: pointer;
+  background-color: @nav-item-background;
+  color: @nav-item-color;
+  font-family: @nav-item-font;
+  font-size: @nav-item-font-size;
+  font-weight: @nav-item-font-weight;
+  padding: @nav-item-padding;
+  margin: @nav-item-margin;
+}
+
+.nav-item :hover {
+}
+
+.nav-form-item > form {
+  border: 1px solid blueviolet;
+}
+
+.nav-link {
+  color: @nav-link-color;
+  padding: @nav-link-padding;
+}
+
+.nav-link:hover {
+  color: @nav-link-hover-color;
+  background: @nav-link-hover-background;
+}
+
+@media (min-width: @sm) {
+  .nav-container {
+    width: @sm;
+  }
+}
+
+@media (min-width: @med) {
+  .nav-container {
+    width: @med;
+    background: red;
+  }
+}
+
+@media (min-width: @lg) {
+  body {
+    font-size: @small;
+  }
+  .nav-container {
+    width: @lg;
+
+    background: blue;
+  }
+}
+
+@media (min-width: @xl){
+  body {
+    font-size:  @medium;
+  }
+  .nav-container{
+    width: @xl;
+
+    background: violet;
+  }
+}
+
+@media (min-width: @xxl){
+  body{
+    font-size: @xlarge;
+  }
+  .nav-container{
+    width: @xlarge;
+
+    font-size: @xxl;
+
+    background: orange;
+  }
 }
