@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.less']
 })
 export class NavComponent implements OnInit {
+  public menuToggle = false;
 
   constructor() { }
 

@@ -1,0 +1,148 @@
+@list-smaller-screen: {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+  }
+  ul.nav-list {
+    position: absolute;
+    top: 1em;
+    margin-top: 1.5em;
+    z-index: 200;
+    width: 100%;
+    display: none;
+      justify-content: center;
+      align-items: baseline;
+      align-content: space-between;
+      flex-flow: column wrap;
+    background-color: blue;
+  }
+};
+
+.wf {
+  background-color: black;
+
+}
+
+.nav-list.toggled{
+  display: flex;
+  justify-content: center;
+}
+
+
+.nav-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: fit-content;
+  font-size: 1rem;
+  background-color: gold;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .nav-container {
+    background-color: aqua;
+  }
+  @list-smaller-screen();
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+    @list-smaller-screen();
+}
+
+@media (min-width: 128px) and (max-width: 576px) {
+    @list-smaller-screen();
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+.nav-list {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 0px 2px;
+  position: relative;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.nav-item > form {
+  margin: 0px;
+  padding: 0px;
+  display: table;
+  border-radius: 0px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.nav-item > form > .form-control {
+  height: 1em;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 1em;
+  padding: 2px;
+}
+
+.nav-item > form > .form-control:focus {
+  box-shadow: none;
+}
+
+.nav-item > form > button {
+  display: inline-flex;
+  vertical-align: middle;
+  font-size: 0.75em;
+  margin: auto;
+  height: fit-content;
+  padding: 3px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.nav-item > form > button {
+  display: inline-flex;
+  vertical-align: middle;
+  font-size: 0.75em;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+  padding: 3px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+span.icon.wf-search {
+  background-color: black;
+}

@@ -45,6 +45,7 @@ export class CarouselComponent implements OnInit, AfterContentInit {
       }
     }
     this.setInitialActiveSlide();
+    this.itemArray = new Array(this.carouselItems?.length);
   }
 
   startSlideTimer(): void {

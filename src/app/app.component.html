@@ -1,16 +1,26 @@
 <main class="container">
-  <app-heading></app-heading>
-  <app-modal [ShowModal]="showModal" headerText="Modal header" footerText="Modal Footer" (okModal)="showModal = false"> </app-modal>
-
-
+  <app-modal
+    [ShowModal]="showModal"
+    headerText="Modal header"
+    footerText="Modal Footer"
+    (okModal)="showModal = false"
+  >
+  </app-modal>
+  <section class="row">
+    <app-heading></app-heading>
+  </section>
 
   <section class="row">
-    <app-carousel>
-      <div class="carousel-item" #carouseItem> I Like Pie</div>
-      <div class="carousel-item" #carouseItem>I LIKE Cake</div>
-      <div class="carousel-item" #carouseItem>Cobbler</div>
-      <div class="carousel-item" #carouseItem>Cookies</div>
-    </app-carousel>
+    <div class="carousel">
+      <app-carousel>
+        <div class="carousel-item" #carouseItem>I Like Pie</div>
+        <div class="carousel-item cake" #carouseItem>I LIKE Cake</div>
+        <div class="carousel-item" #carouseItem>Cobbler</div>
+        <div class="carousel-item" #carouseItem>Cookies</div>
+      </app-carousel>
+    </div>
+  </section>
+  <section class="row">
     <h1>Buttons</h1>
     <article>
       <h2>Button Sizes</h2>

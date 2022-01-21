@@ -1,5 +1,9 @@
 <div class="nav-container">
-  <ul class="nav-list">
+  <button class="icon  wf " [ngClass]="{'menu': !menuToggle, 'close': menuToggle}" (click)="menuToggle = !menuToggle">
+
+  </button>
+  <div>
+  <ul class="nav-list" [ngClass]="{'toggled':menuToggle}">
     <li class="nav-item nav-brand">
       <a class="nav-link" routerLink="home">HOME</a>
     </li>
@@ -9,8 +13,8 @@
     <li class="nav-item">
       <a routerLink="inventory">Inventory</a>
     </li>
-    <li class="nav-form-item">
-      <form class="search"><input class="input search-input" type="text"/><button class="btn small primary nav-serch">Search</button></form>
+    <li class="nav-item">
+      <form><input class="form-control" [ngClass]="{'show-menu':menuToggle}" type="text"/><button class=""><span class="search icon wf-search"></span></button></form>
     </li>
     <li class="nav-item">
       <a routerLink="about" class="nav-link">About</a>
@@ -19,4 +23,5 @@
       <a class="nav-link">profile goes here</a>
     </li>
   </ul>
+  </div>
 </div>

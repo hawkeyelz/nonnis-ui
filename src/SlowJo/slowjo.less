@@ -1,13 +1,15 @@
 @import url("./slowjowebfont.less");
 @import url("./sloJoBreakPoints.less");
 .container {
-  padding: 5px;
   width: 100%;
+  padding: 1px;
+  box-sizing: border-box;
 }
 .container-inline {
   padding: 5px;
   display: inline-block;
   min-width: fit-content;
+  box-sizing: border-box;
 }
 
 .container-flex {
@@ -15,6 +17,7 @@
   display: flexbox;
   padding: 5px;
   flex-flow: row wrap;
+  box-sizing: border-box;
 }
 
 .row {
@@ -290,6 +293,7 @@ form > input {
   @input();
 }
 form > input:focus {
+  box-sizing: border-box;
   // outline: blueviolet solid 6px;
   box-shadow: 0 0 2px 1px @primary;
 }
@@ -597,11 +601,13 @@ border-danger {
 //carousel
 .carousel-item {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  display: inline-block;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   left: -100%;
+  z-index: -1;
 }
 
 .carousel-item.active {
@@ -723,112 +729,78 @@ border-danger {
   color: @typeahead-selected-color;
 }
 
-// navigation
-.nav-container {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: fit-content;
-  height: fit-content;
-  grid-row: auto;
-  display: grid;
-  padding: @nav-container-padding;
-  margin: @nav-container-margin;
-  border: @nav-container-border;
-  background: @nav-container-background;
-}
-.nav-list {
-  margin: 1rem 1rem 1rem 1rem;
-  display: flex;
-  flex-flow: row wrap;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: space-around;
-  width: fit-content;
-  height: fit-content;
-}
-
-.nav-brand {
-  float: left;
-  color: red;
-  background: orange;
-}
-
-.nav-item {
-  display: -ms-inline-flexbox;
-  height: 100%;
-  width: fit-content;
-  cursor: pointer;
-  background-color: @nav-item-background;
-  color: @nav-item-color;
-  font-family: @nav-item-font;
-  font-size: @nav-item-font-size;
-  font-weight: @nav-item-font-weight;
-  padding: @nav-item-padding;
-  margin: @nav-item-margin;
-}
-
-.nav-item :hover {
-}
-
-.nav-form-item > form {
-  border: 1px solid blueviolet;
+.nav-item>form>button:active .icon{
+  background-color: darken(@menu-color, 40%);
 }
 
 .nav-link {
+  text-decoration: none;
   color: @nav-link-color;
-  padding: @nav-link-padding;
+  cursor: pointer;
 }
 
 .nav-link:hover {
   color: @nav-link-hover-color;
-  background: @nav-link-hover-background;
 }
 
-@media (min-width: @sm) {
-  .nav-container {
-    width: @sm;
-  }
-}
+// navigation
+// .nav-container {
+//   position: relative;
+//   left: 0;
+//   top: 0;
+//   width: fit-content;
+//   height: fit-content;
+//   grid-row: auto;
+//   display: grid;
+//   padding: @nav-container-padding;
+//   margin: @nav-container-margin;
+//   border: @nav-container-border;
+//   background: @nav-container-background;
+// }
+// .nav-list {
+//   margin: 1rem 1rem 1rem 1rem;
+//   display: flex;
+//   flex-flow: row wrap;
+//   vertical-align: middle;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: fit-content;
+//   height: fit-content;
+// }
 
-@media (min-width: @med) {
-  .nav-container {
-    width: @med;
-    background: red;
-  }
-}
+// .nav-brand {
+//   float: left;
+//   color: red;
+//   background: orange;
+// }
 
-@media (min-width: @lg) {
-  body {
-    font-size: @small;
-  }
-  .nav-container {
-    width: @lg;
+// .nav-item {
+//   display: -ms-inline-flexbox;
+//   height: 100%;
+//   width: fit-content;
+//   cursor: pointer;
+//   background-color: @nav-item-background;
+//   color: @nav-item-color;
+//   font-family: @nav-item-font;
+//   font-size: @nav-item-font-size;
+//   font-weight: @nav-item-font-weight;
+//   padding: @nav-item-padding;
+//   margin: @nav-item-margin;
+// }
 
-    background: blue;
-  }
-}
+// .nav-item :hover {
+// }
 
-@media (min-width: @xl){
-  body {
-    font-size:  @medium;
-  }
-  .nav-container{
-    width: @xl;
+// .nav-form-item > form {
+//   border: 1px solid blueviolet;
+// }
 
-    background: violet;
-  }
-}
+// .nav-link {
+//   color: @nav-link-color;
+//   padding: @nav-link-padding;
+// }
 
-@media (min-width: @xxl){
-  body{
-    font-size: @xlarge;
-  }
-  .nav-container{
-    width: @xlarge;
-
-    font-size: @xxl;
-
-    background: orange;
-  }
-}
+// .nav-link:hover {
+//   color: @nav-link-hover-color;
+//   background: @nav-link-hover-background;
+// }

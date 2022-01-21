@@ -1,21 +1,21 @@
-<div class="carousel-container box-shadow-small-dark border-">
+<div class="carousel-container box-shadow-small-dark border">
   <div class="carousel">
 
-  <div class="carousel-controls">
-    <div class="carousel-control-left">
-    <button class="wf-left btn hallow lg" (click)="previousSlide()"></button>
-    </div>
-    <div class="carousel-control-right">
-      <button class="wf-right btn hallow lg" (click)="nextSlide()"></button>
-    </div>
-  </div>
+    <button class="carousel-control btn left " (click)="previousSlide()">
+      <div class="icon wf left arrow"></div>
+    </button>
+    <button class="carousel-control btn right" (click)="nextSlide()">
+      <div class="icon wf right arrow right"></div>
+    </button>
+
 <ng-content></ng-content>
 
 </div>
 <footer class="carousel-footer">
   <ul class="carousel-selector-control">
-    <li *ngFor="let item of itemArray; let i=index"><button class="btn carousel-btn active"[ngClass]="{'active': i === activeIndex, 'hallow':i != activeIndex}" (click)="selectSlide(i)"></button></li>
+    <li *ngFor="let item of itemArray; let i=index"><button class="btn carousel-btn "[ngClass]="{'active': i === activeIndex, 'hallow':i != activeIndex}" (click)="selectSlide(i)"></button></li>
   </ul>
-  <div class="carousel-selector-control"><button *ngIf="isAuto" class="btn carousel-btn wf-pause play-pause-btn" (click)="togglePlay()" [ngClass]="{'wf-play':!playing, 'wf-paused':playing}"></button></div>
+  <div class="carousel-selector-control"><button *ngIf="isAuto" class="btn  icon wf pause play-pause-btn" (click)="togglePlay()" [ngClass]="{'play':!playing, 'paused':playing}"> </button>
+  </div>
 </footer>
 </div>

@@ -1,42 +1,70 @@
 .carousel-container {
   position: relative;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  height: 650px;
-  width: 1000px;
-  margin-top: 5px;
-  border: 1px solid brown;
-  // background-color: greenyellow;
+  height: 100%;
+  width: 100%;
+  border: 1px solid;
+  border-radius: .5em;
+}
+
+.carousel-controls {
 }
 
 .carousel-control {
-  display: inline-block;
-  position: absolute;
-  top:50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.carousel-control-left {
   padding-left: 1rem;
-  top: 0;
-  left: 0;
-  .carousel-control;
-}
-
-.carousel-control-right{
-  padding-right: 1rem;
-  top: 0;
-  right: 0;
-  .carousel-control;
-}
-
-.carousel-item {
+  top: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  transform: translateY(-50%);
+  font-size: 3em;
 }
+
+button.carousel-control {
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 1em;
+  width: 1em;
+  height: 1em;
+}
+
+button.carousel-control.btn:hover {
+  background: rgba(150, 150, 150, .125);
+}
+.carousel-control.btn {
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+}
+.left.btn {
+  margin-left: .5em;
+  left: 0;
+}
+
+.right.btn {
+  margin-right: .5em;
+  right: 0;
+}
+.arrow {
+  border: 1px red solid;
+  content: " bob";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  background-color: black;
+}
+
+.arrow:hover{
+  background: black;
+}
+
 
 
 .carousel-btn{
@@ -51,12 +79,14 @@
   position: absolute;
   justify-content: center;
   left: 0;
-  bottom: .25rem;
+  bottom: 2rem;
   width: 100%;
 }
 
 .carousel-selector-control {
   display: flex;
+  height: 1em;
+
   flex-flow: row wrap;
   align-self: center;
   align-items: center;
@@ -74,12 +104,11 @@
 }
 
 .hidden {
- display: none;
+  display: none;
 }
 
 .play-pause-btn {
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-origin: border-box;
-  padding: .75rem;
+  width: 25px;
+  height: 25px;
+  background-color: black;
 }
