@@ -182,7 +182,7 @@ export class CarouselComponent implements OnInit, AfterContentInit {
       this.stopSlideTimer();
     } else {
       this.startSlideTimer();
-      this.selectSlide(this.activeIndex + 1);
+      this.selectSlide(this.activeIndex);
     }
   }
 }
